@@ -80,14 +80,12 @@ float DE(vec3 z)
 		z -= Offset;
 		if( z.z<-0.5*Offset.z)  z.z+=Offset.z;
 
-
 		//orbitTrap color
 		rr = dot(z,z);
 		if (i<ColorIterations) orbitTrap = min(orbitTrap, (vec4(abs(z),rr)));
 			
 		i++;
 	}
-
 	return sqrt(rr) / (Dd + DEtweak);
 }
 
